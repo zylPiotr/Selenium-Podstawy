@@ -39,16 +39,20 @@ public class LokalizacjaZaPomocaXpath {
         Select cars = new Select(selectCarType);
         cars.selectByIndex(0);
 
-        // Tworzymy liste WebElementow dla cars z Selecta, ktora nazywa sie options.
+// Tworzymy liste WebElementow dla cars z Selecta, ktora nazywa sie options.
         List<WebElement> options = cars.getOptions();
 
-        // A teraz robimy petle, ktora przedstawi te elementy w konsoli tj. dla
-        // WebElementow, ktore nazwiemy option bedzie wyswietlala elementy
-        // dopoki nie skoncza sie opcje (options) z powyzszej listy
+// A teraz robimy petle, ktora przedstawi te elementy w konsoli tj. dla
+// WebElementow, ktore nazwiemy option bedzie wyswietlala elementy
+// dopoki nie skoncza sie opcje (options) z powyzszej listy
         for (WebElement option : options)
         {
             System.out.println(option.getText());
         }
+
+        Zadanie_190 zadanie = new Zadanie_190();
+        System.out.println(zadanie.checkSelectOptions("Kaudi",selectCarType));
+        System.out.println(zadanie.checkSelectOptions("Audi",selectCarType));
 
         driver.close();
 
