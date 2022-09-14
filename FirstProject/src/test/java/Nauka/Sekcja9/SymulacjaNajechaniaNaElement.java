@@ -1,4 +1,4 @@
-package Nauka;
+package Nauka.Sekcja9;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;

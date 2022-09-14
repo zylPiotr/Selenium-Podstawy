@@ -1,4 +1,4 @@
-package Nauka;
+package Nauka.Sekcja9;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
