@@ -10,7 +10,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 
 import java.time.Duration;
 import java.util.List;
@@ -29,8 +28,7 @@ public class Asercje extends BaseTest{
         WebElement para = driver.findElement(By.cssSelector("p"));
 
         Assert.assertNotSame(para.getText(),"Dopiero się pojawiłem!");
-        Assert.assertEquals(para.isDisplayed(),false);
-        Assert.assertEquals(para.getText(),"Dopiero się pojawiłem!");
+        Assert.assertEquals(para.isDisplayed(),true);
         Assert.assertEquals(para.getText(),"Dopiero się pojawiłem!");
 
         driver.close();
