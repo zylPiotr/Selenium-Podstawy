@@ -1,19 +1,14 @@
 package Nauka.Sekcja13;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.List;
 
-public class HotelSearch {
-
-    WebDriver driver;
-
+public class HotelSearch extends ClassWithAllMethods{
     @Test
     public void zadanieTestowe(){
-    driver = ClassWithAllMethods.getDriver();
     driver.get("http://www.kurs-selenium.pl/demo/");
     driver.manage().window().maximize();
 
@@ -38,9 +33,6 @@ public class HotelSearch {
         Assert.assertEquals("Oasis Beach Tower", hotelNames.get(1));
         Assert.assertEquals("Rose Rayhaan Rotana", hotelNames.get(2));
         Assert.assertEquals("Hyatt Regency Perth", hotelNames.get(3));
-
-
-//    driver.quit();
 
         }
     }

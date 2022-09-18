@@ -1,20 +1,15 @@
 package Nauka.Sekcja13;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import java.util.List;
 
-public class ZadanieSignUp {
-
-    WebDriver driver;
-
+public class ZadanieSignUp extends ClassWithAllMethods {
     @Test
     public void signUpTest(){
-        driver = ClassWithAllMethods.getDriver();
         driver.manage().window().maximize();
         driver.get("http://www.kurs-selenium.pl/demo");
 
@@ -47,7 +42,5 @@ public class ZadanieSignUp {
         softAssert.assertTrue(errors.contains("The First name field is required."));
         softAssert.assertTrue(errors.contains("The Last Name field is required."));
         softAssert.assertAll();
-
-        driver.quit();
     }
 }

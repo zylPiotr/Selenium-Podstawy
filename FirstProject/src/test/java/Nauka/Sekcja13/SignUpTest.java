@@ -1,17 +1,12 @@
 package Nauka.Sekcja13;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
-public class SignUpTest {
-
-    WebDriver driver;
-
+public class SignUpTest extends ClassWithAllMethods{
     @Test
     public void zadanieTestowe(){
-    driver = ClassWithAllMethods.getDriver();
     driver.get("http://www.kurs-selenium.pl/demo/");
     driver.manage().window().maximize();
 
@@ -41,12 +36,6 @@ public class SignUpTest {
             .filter(WebElement::isDisplayed)
             .findFirst()
             .ifPresent(WebElement::click);
-
-
-
-
-//    driver.quit();
-
         }
     }
 
