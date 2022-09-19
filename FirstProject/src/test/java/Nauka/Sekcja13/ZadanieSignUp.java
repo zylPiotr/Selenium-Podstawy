@@ -9,7 +9,7 @@ import java.util.List;
 
 public class ZadanieSignUp extends BaseTest {
     @Test
-    public void signUpTest(){
+    public void signUpEmptyFormTest(){
         driver.manage().window().maximize();
         driver.get("http://www.kurs-selenium.pl/demo");
 

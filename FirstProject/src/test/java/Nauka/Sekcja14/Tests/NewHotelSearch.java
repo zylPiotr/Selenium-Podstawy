@@ -1,8 +1,8 @@
 package Nauka.Sekcja14.Tests;
 
-import Nauka.Sekcja14.Pages.BaseTests;
-import Nauka.Sekcja14.Pages.HotelSearchPage;
-import Nauka.Sekcja14.Pages.ResultsPage;
+import Nauka.Sekcja14.HotelPages.BaseTests;
+import Nauka.Sekcja14.HotelPages.HotelSearchPage;
+import Nauka.Sekcja14.HotelPages.ResultsPage;
 import org.testng.annotations.Test;
 
 import java.util.List;

@@ -1,4 +1,4 @@
-package Nauka.Sekcja14.Pages;
+package Nauka.Sekcja14.HotelPages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
