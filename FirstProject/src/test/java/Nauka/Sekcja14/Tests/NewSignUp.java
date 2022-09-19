@@ -1,11 +1,9 @@
 package Nauka.Sekcja14.Tests;
 
-import Nauka.Sekcja13.BaseTest;
 import Nauka.Sekcja14.HotelPages.BaseTests;
 import Nauka.Sekcja14.RegistrationPages.SignUpTestPage;
 import Nauka.Sekcja14.RegistrationPages.User;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -15,27 +13,27 @@ public class NewSignUp extends BaseTests{
 
     @Test
     public void newSignUpTest(){
-        SignUpTestPage signUpTestPage = new SignUpTestPage(BaseTests.getDriver());
-        signUpTestPage.pageSetup();
-        signUpTestPage.getToRegistrationPage();
+        SignUpTestPage signUpTestPage = new SignUpTestPage(BaseTests.getDriver())
+                .pageSetup()
+                .getToRegistrationPage();
         int number = (int) (Math.random()*100000);
 
-        User user = new User();
-        user.setName("Czarek");
-        user.setLastname("Pieczarek");
-        user.setPhone("012345678");
-        user.setEmail("tikotiko@" + number + "tokitoki.xy");
-        user.setPassword("Pieczarkowehaslo");
-        user.setConfirmPassword("Pieczarkowerhaslo");
-        signUpTestPage.registration(user);
-        signUpTestPage.submitClick();
+        User user = new User()
+                .setName("Czarek")
+                .setLastname("Pieczarek")
+                .setPhone("012345678")
+                .setEmail("tikotiko@" + number + "tokitoki.xy")
+                .setPassword("Pieczarkowehaslo")
+                .setConfirmPassword("Pieczarkowerhaslo");
+        signUpTestPage.registration(user)
+                .submitClick();
     }
     @Test
     public void signUpEmptyFormTest(){
-        SignUpTestPage signUpTestPage = new SignUpTestPage(BaseTests.getDriver());
-        signUpTestPage.pageSetup();
-        signUpTestPage.getToRegistrationPage();
-        signUpTestPage.submitClick();
+        SignUpTestPage signUpTestPage = new SignUpTestPage(BaseTests.getDriver())
+                .pageSetup()
+                .getToRegistrationPage()
+                .submitClick();
         BaseTests.waitTillExist(By.xpath("//div[@class='alert alert-danger']//p"));
 
         List<String> errors = signUpTestPage.checkErrors();

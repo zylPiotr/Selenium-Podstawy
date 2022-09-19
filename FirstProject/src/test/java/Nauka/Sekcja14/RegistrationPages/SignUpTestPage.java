@@ -36,27 +36,31 @@ public class SignUpTestPage extends BaseTests {
 
     public SignUpTestPage(WebDriver driver){PageFactory.initElements(driver,this);}
 
-    public void pageSetup(){
+    public SignUpTestPage pageSetup(){
         driver.get("http://www.kurs-selenium.pl/demo/");
         driver.manage().window().maximize();
+        return this;
     }
 
-    public void getToRegistrationPage(){
+    public SignUpTestPage getToRegistrationPage(){
         clickOnMyAccount.stream().filter(WebElement::isDisplayed).findFirst().ifPresent(WebElement::click);
         clickOnSignUp.stream().filter(WebElement::isDisplayed).findFirst().ifPresent(WebElement::click);
+        return this;
     }
 
-    public void registration(User user){
+    public SignUpTestPage registration(User user){
         Name.sendKeys(user.getName());
         Lastname.sendKeys(user.getLastname());
         Phone.sendKeys(user.getPhone());
         Email.sendKeys(user.getEmail());
         Password.sendKeys(user.getPassword());
         ConfirmPassword.sendKeys(user.getConfirmPassword());
+        return this;
     }
 
-    public void submitClick(){
+    public SignUpTestPage submitClick(){
         submit.stream().filter(WebElement::isDisplayed).findFirst().ifPresent(WebElement::click);
+        return this;
     }
 
     public List<String> checkErrors(){

@@ -13,47 +13,53 @@ public class User {
         return name;
     }
 
-    public void setName(String name) {
+    public User setName(String name) {
         this.name = name;
+        return this;
     }
 
     public String getLastname() {
         return lastname;
     }
 
-    public void setLastname(String lastname) {
+    public User setLastname(String lastname) {
         this.lastname = lastname;
+        return this;
     }
 
     public String getPhone() {
         return phone;
     }
 
-    public void setPhone(String phone) {
+    public User setPhone(String phone) {
         this.phone = phone;
+        return this;
     }
 
     public String getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
+    public User setEmail(String email) {
         this.email = email;
+        return this;
     }
 
     public String getPassword() {
         return password;
     }
 
-    public void setPassword(String password) {
+    public User setPassword(String password) {
         this.password = password;
+        return this;
     }
 
     public String getConfirmPassword() {
         return confirmPassword;
     }
 
-    public void setConfirmPassword(String confirmPassword) {
+    public User setConfirmPassword(String confirmPassword) {
         this.confirmPassword = confirmPassword;
+        return this;
     }
 }

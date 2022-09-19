@@ -1,5 +1,6 @@
 package Nauka.Sekcja14.HotelPages;
 
+import Nauka.Sekcja14.Utilis.DriverFactory;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
@@ -19,8 +20,7 @@ public class BaseTests {
     @BeforeMethod
     public static WebDriver getDriver(){
         if (driver == null){
-            WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver();
+            driver = DriverFactory.getDriver("firefox");
         }
         return driver;
     }

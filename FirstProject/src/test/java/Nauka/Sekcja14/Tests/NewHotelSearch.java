@@ -11,13 +11,12 @@ public class NewHotelSearch extends BaseTests{
 
     @Test
     public void newSearchOfHotel(){
-        HotelSearchPage hotelSearch = new HotelSearchPage();
-        hotelSearch.pageSetup();
-        hotelSearch.setCity("Dubai");
-        hotelSearch.setDates("01/01/2024","01/01/2025");
-        hotelSearch.setNumberOfTravellers("4","2");
-        hotelSearch.setSearchButton();
-
+        HotelSearchPage hotelSearchPage = new HotelSearchPage()
+                .pageSetup()
+                .setCity("Dubai")
+                .setDates("01/01/2024","01/01/2025")
+                .setNumberOfTravellers("4","2")
+                .setSearchButton();
         ResultsPage resultsPage = new ResultsPage(driver);
         List<String> hotelNames = resultsPage.getHotelNames();
         System.out.println();
