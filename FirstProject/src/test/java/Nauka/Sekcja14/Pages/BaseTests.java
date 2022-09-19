@@ -1,4 +1,4 @@
-package Nauka.Sekcja13;
+package Nauka.Sekcja14.Pages;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
@@ -13,10 +13,9 @@ import org.testng.annotations.BeforeMethod;
 import java.time.Duration;
 import java.util.List;
 
-public class ClassWithAllMethods {
+public class BaseTests {
 
     protected static WebDriver driver;
-
     @BeforeMethod
     public static WebDriver getDriver(){
         if (driver == null){
@@ -26,10 +25,12 @@ public class ClassWithAllMethods {
         return driver;
     }
     @AfterMethod
-    public void quitMethod(){
+    public void tearDown(){
         driver.quit();
     }
 
+
+    //Metody
     public static void waitTillExist(By locator){
         FluentWait<WebDriver> wait = new FluentWait<>(driver);
         wait.ignoring(NoSuchElementException.class);

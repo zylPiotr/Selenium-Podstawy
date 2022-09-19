@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
-public class Zadanie extends ClassWithAllMethods{
+public class Zadanie extends BaseTest {
 
     @Test
     public void searchAndAssert(){

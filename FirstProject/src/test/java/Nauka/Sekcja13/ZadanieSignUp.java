@@ -7,7 +7,7 @@ import org.testng.asserts.SoftAssert;
 
 import java.util.List;
 
-public class ZadanieSignUp extends ClassWithAllMethods {
+public class ZadanieSignUp extends BaseTest {
     @Test
     public void signUpTest(){
         driver.manage().window().maximize();
@@ -27,7 +27,7 @@ public class ZadanieSignUp extends ClassWithAllMethods {
 
         driver.findElement(By.cssSelector("[class*='signupbtn']")).click();
 
-        ClassWithAllMethods.waitTillExist(By.xpath("//div[@class='alert alert-danger']//p"));
+        BaseTest.waitTillExist(By.xpath("//div[@class='alert alert-danger']//p"));
         List<String> errors = driver.findElements(By.xpath("//div[@class='alert alert-danger']//p"))
                 .stream()
                 .map(WebElement::getText)

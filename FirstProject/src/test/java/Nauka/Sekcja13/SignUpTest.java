@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
-public class SignUpTest extends ClassWithAllMethods{
+public class SignUpTest extends BaseTest {
     @Test
     public void zadanieTestowe(){
     driver.get("http://www.kurs-selenium.pl/demo/");
