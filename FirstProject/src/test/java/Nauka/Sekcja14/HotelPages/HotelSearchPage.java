@@ -1,5 +1,7 @@
 package Nauka.Sekcja14.HotelPages;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -27,6 +29,16 @@ public class HotelSearchPage extends BaseTests{
     @FindBy(css = "[class^='btn btn-lg']")
     private WebElement searchButton;
 
+    /*Tworzenie metody do lokalizowania elementów na stronie (ile ich jest)
+    @FindBys({
+        @FindBy(nazwaSelektora = "nazwaElementu")
+        @FindBy(nazwaSelektora = "nazwaElementu")
+        @FindBy(nazwaSelektora = "nazwaElementu")
+    })
+    List<WebElement> nazwaListy;
+    Następnie odwołać się do listy elementów w sout'cie i pokaze sie numer elementow kazdego typu.
+     **/
+    private static final Logger logger = LogManager.getLogger();
     public HotelSearchPage(){
         PageFactory.initElements(BaseTests.driver,this);
     }
@@ -37,25 +49,31 @@ public class HotelSearchPage extends BaseTests{
         return this;
     }
     public HotelSearchPage setCity(String cityName){
+        logger.info("Setting city: " + cityName);
         searchCityWindow.click();
         searchInput.sendKeys(cityName);
         waitTillExist(By.xpath("//span[text()='Dubai']"));
         searchResult.click();
+        logger.info("Setting city done.");
         return this;
     }
 
     public HotelSearchPage setDates(String checkin, String checkout){
+        logger.info("Setting dates check-in: " + checkin + "Setting dates check-out: " + checkout);
         inputData1.sendKeys(checkin);
         inputData2.sendKeys(checkout);
+        logger.info("Setting dates done.");
         return this;
     }
 
     public HotelSearchPage setNumberOfTravellers(String adultsAmount,String childAmount){
+        logger.info("Setting amount of adults: " +adultsAmount + "Setting amount of childs: " + childAmount);
         travellersInput.click();
         adultInput.clear();
         adultInput.sendKeys(adultsAmount);
         childInput.clear();
         childInput.sendKeys(childAmount);
+        logger.info("Setting number of travelers done.");
         return this;
     }
     public HotelSearchPage setSearchButton(){

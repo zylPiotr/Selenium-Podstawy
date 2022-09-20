@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.FluentWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
+import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 
@@ -18,9 +19,9 @@ public class BaseTests {
 
     protected static WebDriver driver;
     @BeforeMethod
-    public static WebDriver getDriver(){
+    public static WebDriver getDriver() throws IOException {
         if (driver == null){
-            driver = DriverFactory.getDriver("firefox");
+            driver = DriverFactory.getDriver();
         }
         return driver;
     }

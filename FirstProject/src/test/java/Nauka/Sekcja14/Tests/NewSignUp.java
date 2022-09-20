@@ -7,12 +7,13 @@ import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
+import java.io.IOException;
 import java.util.List;
 
 public class NewSignUp extends BaseTests{
 
     @Test
-    public void newSignUpTest(){
+    public void newSignUpTest() throws IOException {
         SignUpTestPage signUpTestPage = new SignUpTestPage(BaseTests.getDriver())
                 .pageSetup()
                 .getToRegistrationPage();
@@ -29,7 +30,7 @@ public class NewSignUp extends BaseTests{
                 .submitClick();
     }
     @Test
-    public void signUpEmptyFormTest(){
+    public void signUpEmptyFormTest() throws IOException {
         SignUpTestPage signUpTestPage = new SignUpTestPage(BaseTests.getDriver())
                 .pageSetup()
                 .getToRegistrationPage()
