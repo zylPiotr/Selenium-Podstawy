@@ -1,13 +1,9 @@
 package Nauka.Sekcja14.RegistrationPages;
 
-import Nauka.Sekcja13.BaseTest;
 import Nauka.Sekcja14.HotelPages.BaseTests;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.annotations.Test;
 
 import java.util.List;
 
@@ -34,7 +30,7 @@ public class SignUpTestPage extends BaseTests {
     @FindBy(xpath = "//div[@class='alert alert-danger']//p")
     private List<WebElement> errorsList;
 
-    public SignUpTestPage(WebDriver driver){PageFactory.initElements(driver,this);}
+    public SignUpTestPage(){PageFactory.initElements(driver,this);}
 
     public SignUpTestPage pageSetup(){
         driver.get("http://www.kurs-selenium.pl/demo/");

@@ -3,7 +3,6 @@ package Nauka.Sekcja14.HotelPages;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -14,7 +13,7 @@ public class HotelSearchPage extends BaseTests{
     private WebElement searchCityWindow;
     @FindBy(xpath = "//div[@id='select2-drop']//input")
     private WebElement searchInput;
-    @FindBy(xpath = "//span[text()='Dubai']")
+    @FindBy(xpath = "//span[@class='select2-match']")
     private WebElement searchResult;
     @FindBy(css = "[class='form input-lg dpd1']")
     private WebElement inputData1;
@@ -48,11 +47,11 @@ public class HotelSearchPage extends BaseTests{
         driver.manage().window().maximize();
         return this;
     }
-    public HotelSearchPage setCity(String cityName){
+    public HotelSearchPage setCity(String cityName) throws InterruptedException {
         logger.info("Setting city: " + cityName);
         searchCityWindow.click();
         searchInput.sendKeys(cityName);
-        waitTillExist(By.xpath("//span[text()='Dubai']"));
+        waitTillExist(By.xpath("//span[@class='select2-match']"));
         searchResult.click();
         logger.info("Setting city done.");
         return this;

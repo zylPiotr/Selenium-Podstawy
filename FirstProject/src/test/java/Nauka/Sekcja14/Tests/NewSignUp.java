@@ -14,7 +14,7 @@ public class NewSignUp extends BaseTests{
 
     @Test
     public void newSignUpTest() throws IOException {
-        SignUpTestPage signUpTestPage = new SignUpTestPage(BaseTests.getDriver())
+        SignUpTestPage signUpTestPage = new SignUpTestPage()
                 .pageSetup()
                 .getToRegistrationPage();
         int number = (int) (Math.random()*100000);
@@ -31,7 +31,7 @@ public class NewSignUp extends BaseTests{
     }
     @Test
     public void signUpEmptyFormTest() throws IOException {
-        SignUpTestPage signUpTestPage = new SignUpTestPage(BaseTests.getDriver())
+        SignUpTestPage signUpTestPage = new SignUpTestPage()
                 .pageSetup()
                 .getToRegistrationPage()
                 .submitClick();

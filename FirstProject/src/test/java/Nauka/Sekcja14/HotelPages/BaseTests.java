@@ -1,6 +1,5 @@
 package Nauka.Sekcja14.HotelPages;
 
-import Nauka.Sekcja14.Utilis.DriverFactory;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
@@ -11,7 +10,6 @@ import org.openqa.selenium.support.ui.FluentWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
-import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 
@@ -19,11 +17,11 @@ public class BaseTests {
 
     protected static WebDriver driver;
     @BeforeMethod
-    public static WebDriver getDriver() throws IOException {
-        if (driver == null){
-            driver = DriverFactory.getDriver();
-        }
-        return driver;
+    public void setup() {
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get("http://www.kurs-selenium.pl/demo/");
     }
     @AfterMethod
     public void tearDown(){driver.quit();}
